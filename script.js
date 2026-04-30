@@ -29,16 +29,16 @@ const projects = [
 const grid = document.getElementById('projectGrid');
 
 projects.forEach(proj => {
-    // Створюємо посилання-картку
-    const card = document.createElement('a');
-    card.href = proj.url;
-    card.target = "_blank"; // Відкривати в новій вкладці
+    // Створюємо картку проекту
+    const card = document.createElement('div');
     card.className = 'project-card';
 
     card.innerHTML = `
-        <div class="img-wrapper">
-            <img src="${proj.image}" alt="${proj.title}" loading="lazy">
-        </div>
+        <a href="${proj.image}" target="_blank" class="img-link">
+            <div class="img-wrapper">
+                <img src="${proj.image}" alt="${proj.title}" loading="lazy">
+            </div>
+        </a>
         <div class="card-info">
             <h3>${proj.title}</h3>
             <p>${proj.desc}</p>
